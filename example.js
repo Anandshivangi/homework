@@ -17,12 +17,16 @@ const server = http.createServer((req, res) => {
         else{
           // res.end("hyyyy")
             res.writeHead(200, { 'Content-Type': 'text/html' });
-            const modifiedContent = data.replace('<%= name %>', 'John Doe');
+            const modifiedContent = data.replace('John Doe', 'shivi');
             res.end(modifiedContent);
         }
        
       });
    }
+   else if(req.url == "/submit"){
+    res.end("data send succesfully");
+    console.log("data send successfully");
+  }
 
 
 });
